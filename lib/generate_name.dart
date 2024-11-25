@@ -15,6 +15,7 @@ class __GenerateNameState extends State<GenerateName> {
    //int _selectedIndex = 0;
     void _onItemTapped(int index) {
       setState(() {
+        ///aasdasdasd
         _selectedIndex = index;
     });
   }
