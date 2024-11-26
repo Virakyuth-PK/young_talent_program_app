@@ -1,170 +1,153 @@
 import 'package:flutter/material.dart';
+import 'package:row_column_fir/card_widget.dart';
 import 'package:row_column_fir/generate_name.dart';
+
 class MyTest extends StatelessWidget {
   const MyTest({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    backgroundColor: Colors.white,
-    
-    body: SingleChildScrollView(
-      child: Column(
-        children: [
-          //Row1
-          Container(
-            width: double.infinity,
-            height: 100,
-            margin: EdgeInsets.all(10),
-            padding: EdgeInsetsDirectional.symmetric(vertical: 10),
-            child: ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>GenerateName()));
-            }, child:Text("Next Screen")), 
-          ),
-          SizedBox(
-            height: 25,
-          ),
-          //Row2
-          Container(
-            color: Colors.blueGrey,
-            width: double.infinity,
-            margin: EdgeInsets.symmetric(vertical: 5),
-            height: 30,
-            child: Text("B10 Social Sharing Bar w/Countdown Timer",textAlign: TextAlign.center,),
-          ),
-          //Row3
-          Container(
-            color: Colors.blueGrey,
-            width: double.infinity,
-            height: 130,
-            padding: EdgeInsetsDirectional.symmetric(vertical: 30),
-            child: Column(
-              children: [
-                Text("B7"),
-                Text("Home Media Slider"),
-              ],
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            //Row1
+            CardWidget(
+              height: 120,
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => GenerateName()));
+              },
+              title: "Next Screen",
             ),
-          ),
-          //Row4
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              //coloumn4.1
-              Column(
-                children: [
-                  //Row4.1.1
-                  Container(
-                    height: 100,
-                    width: 230,
-                    margin: EdgeInsets.all(5),
-                    padding: EdgeInsets.all(35),
-                    color: Colors.blueGrey,
-                    child: Text(
-                      "B2 Featured New",
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  //Row4.1.2
-                  Row(
+            //Row2
+            CardWidget(
+              height: 50,
+              margin: EdgeInsets.symmetric(horizontal: 15),
+              title: "B10 Social Sharing Bar w/Countdown Timer",
+            ),
+            //Row3
+            CardWidget(
+              title: "B7",
+              subTitle: "Home Media Slider",
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => GenerateName()));
+              },
+            ),
+            Row(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      //Column4.1.2.1
-                      Container(
-                        width: 105,
-                        height: 80,
-                        margin: EdgeInsets.symmetric(horizontal: 10),
-                        padding: EdgeInsets.all(15),
-                        color: Colors.blueGrey,
-                        child: Text("B18 Bullet News",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(fontSize: 13)),
+                      Expanded(
+                        child: CardWidget(
+                          title: "B2 Featured",
+                        ),
                       ),
-                      //column4.1.2.2
-                      Container(
-                        width: 105,
-                        height: 80,
-                        margin: EdgeInsets.symmetric(horizontal: 10),
-                        padding: EdgeInsets.all(15),
-                        color: Colors.blueGrey,
-                        child: Text("B5 Featured Sponsors",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(fontSize: 12)),
-                      ),
+                      Expanded(
+                          child: Row(
+                        children: [
+                          CardWidget(
+                            title: "B18 Bulleted News",
+                          ),
+                          CardWidget(
+                            title: "B5 Featured Sponsors",
+                          )
+                        ],
+                      )),
                     ],
                   ),
-                ],
-              ),
-            //column4.2  
-            Column(
-              children: [
-                //Row4.2.1
-                Container(
-                  width: 95,
-                  height: 70,
-                  margin: EdgeInsets.all(5),
-                  padding: EdgeInsets.symmetric(vertical: 15),
-                  color: Colors.blueGrey,
-                  child: Text(
-                    "B11 Sesions Filter",
-                    textAlign: TextAlign.center,
-                  ),
                 ),
-                //Row4.2.2               
-                Container(
-                  width: 95,
-                  height: 70,
-                  margin: EdgeInsets.symmetric(horizontal: 5),
-                  padding: EdgeInsets.symmetric(vertical: 10),
-                  color: Colors.blueGrey,
-                  child: Text(
-                    "B3 Sesions Filter",
-                    textAlign: TextAlign.center,
-                  ),
+                Expanded(
+                    flex: 1,
+                    child: Column(
+                      children: [
+                        CardWidget(
+                          title: "B11 Sesions Filter",
+                        ),
+                        CardWidget(
+                          title: "B3 Featured Sesion",
+                        )
+                      ],
+                    ))
+              ],
+            ),
+            // Row(
+            //   crossAxisAlignment: CrossAxisAlignment.start,
+            //   children: [
+            //     //coloumn4.1
+            //     Column(
+            //       children: [
+            //         //Row4.1.1
+            //         CardWidget(
+            //           title: "B2 Featured News",
+            //         ),
+            //         //Row4.1.2
+            //         Row(
+            //           children: [
+            //             //Column4.1.2.1
+            //             CardWidget(
+            //               title: ("B18 Bullet News"),
+            //             ),
+            //             //SizedBox(width: 15,),
+            //             //column4.1.2.2
+            //             CardWidget(
+            //               title: "B5 Featured Sponsors",
+            //             ),
+            //           ],
+            //         ),
+            //       ],
+            //     ),
+            //     //column4.2
+            //     Expanded(
+            //       child: Column(
+            //         children: [
+            //           //Row4.2.1
+            //           CardWidget(
+            //             title: "B11 Sesions Filter",
+            //           ),
+            //           //Row4.2.2
+
+            //           CardWidget(
+            //             title: "B3 Sesions Filter",
+            //           ),
+            //         ],
+            //       ),
+            //     ),
+            //   ],
+            // ),
+            //Row5
+            Row(
+              children: [
+                //column5.1
+                CardWidget(
+                  width: 105,
+                  height: 100,
+                  margin: EdgeInsets.fromLTRB(15, 15, 15, 0),
+                  title: "B9 Twitter Stream",
+                ),
+                //column5.2
+                CardWidget(
+                  width: 210,
+                  height: 100,
+                  margin: EdgeInsets.fromLTRB(0, 15, 15, 0),
+                  title: "B8 Flick Media Grid",
                 ),
               ],
             ),
-          ],
-        ),
-        //Row5
-        Row(
-          children: [
-            //column5.1
-            Container(
-              width: 105,
-              height: 120,
-              margin: EdgeInsets.all(10),
-              padding: EdgeInsets.symmetric(vertical: 40),
-              color: Colors.blueGrey,
-              child: Text(
-                "B9 Twitter Stream",
-                textAlign: TextAlign.center,
-              ),
-            ),
-            //column5.2
-            Container(
-              width: 215,
-              height: 120,
-              margin: EdgeInsets.all(10),
-              padding: EdgeInsets.symmetric(vertical: 50),
-              color: Colors.blueGrey,
-              child: Text(
-                "B8 Flick Media Grid",
-                textAlign: TextAlign.center,
-              ),
+            //Row6
+            CardWidget(
+              height: 100,
+              title: "B15 Footer",
             ),
           ],
         ),
-        //Row6
-        Container(
-          width: double.infinity,
-          height:85,
-          margin: EdgeInsets.symmetric(horizontal: 10),
-          padding: EdgeInsets.symmetric(vertical: 30),
-          color: Colors.blueGrey,
-          child: Text("B15 Footer",textAlign: TextAlign.center,),
-        ),
-        ],
       ),
-    ),
     );
   }
 }

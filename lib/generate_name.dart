@@ -13,12 +13,12 @@ class __GenerateNameState extends State<GenerateName> {
   var favorites=<WordPair>[];
   late IconData icon;
    //int _selectedIndex = 0;
-    void _onItemTapped(int index) {
-      setState(() {
-        ///aasdasdasd
-        _selectedIndex = index;
-    });
-  }
+  //   void _onItemTapped(int index) {
+  //     setState(() {
+  //       ///aasdasdasd
+  //       _selectedIndex = index;
+  //   });
+  // }
   void getNext() {
     current = WordPair.random(); 
     // notifyListeners();
