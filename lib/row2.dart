@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:row_column_fir/card_widget.dart';
+import 'package:row_column_fir/exercise_row_column_expanded.dart';
 import 'package:row_column_fir/generate_name.dart';
 
 class MyTest extends StatelessWidget {
@@ -24,7 +25,13 @@ class MyTest extends StatelessWidget {
             CardWidget(
               height: 50,
               margin: EdgeInsets.symmetric(horizontal: 15),
-              title: "B10 Social Sharing Bar w/Countdown Timer",
+              title: "Exercise Row Column Expanded",
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ExerciseRowColumnExpanded()));
+              },
             ),
             //Row3
             CardWidget(
