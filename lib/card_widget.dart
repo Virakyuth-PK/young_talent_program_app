@@ -40,10 +40,11 @@ class CardWidget extends StatelessWidget {
                 color: Colors.blue,
               ),
             ),
-            Text(
-              subTitle ?? "",
-              textAlign: TextAlign.center,
-            ),
+            if ((subTitle ?? "").isNotEmpty)
+              Text(
+                subTitle ?? "",
+                textAlign: TextAlign.center,
+              ),
           ],
         ),
         decoration: decorate ??
