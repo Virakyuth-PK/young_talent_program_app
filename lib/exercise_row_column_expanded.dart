@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:row_column_fir/image_widget.dart';
 
 class ExerciseRowColumnExpanded extends StatelessWidget {
   const ExerciseRowColumnExpanded({super.key});
@@ -15,233 +16,31 @@ class ExerciseRowColumnExpanded extends StatelessWidget {
         padding: EdgeInsets.all(15),
         child: Column(
           children: [
-            //By Column
-            Container(
-              height: 200,
-              color: Colors.blue,
-              padding: EdgeInsets.all(15),
-              child: Row(
-                children: [
-                  //Column1
-                  Expanded(
-                      flex: 1,
-                      child: Container(
-                        color: Colors.green,
-                      )),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  //Column2
-                  Expanded(
-                    flex: 2,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        //Column2.1
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            //Row2.1.1
-                            Column(
-                              children: [
-                                //Row2.1.1.1
-                                Container(
-                                  color: Colors.green,
-                                  child: Text("ABCDE"),
-                                ),
-                                SizedBox(
-                                  height: 15,
-                                ),
-                                //Row2.1.1.2
-                                Container(
-                                  color: Colors.green,
-                                  child: Text("ABCDE"),
-                                ),
-                              ],
-                            ),
-                            //Row2.1.2
-                            Container(
-                              color: Colors.green,
-                              child: Text("ABCDE"),
-                            )
-                          ],
-                        ),
-                        //Column2.2
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            //Row2.2.1
-                            Container(
-                              color: Colors.green,
-                              child: Text("ABCDE"),
-                            ),
-                            //Row2.2.2
-                            Container(
-                              color: Colors.green,
-                              child: Text("ABCDE"),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
+            ImageWidget(
+              name: "Sunset",
+              description: "At the Beach",
+              title: "Enjoy the view",
             ),
             SizedBox(
               height: 15,
             ),
-            //By Row
-            Container(
-              padding: EdgeInsets.all(15),
-              height: 200,
-              color: Colors.blue,
-              child: Row(
-                children: [
-                  //Column1
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                      color: Colors.green,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  //Column2
-                  Expanded(
-                      flex: 2,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          //Row2.1
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              //column2.1.1
-                              Column(
-                                children: [
-                                  //Row2.1.1.1
-                                  Container(
-                                    color: Colors.green,
-                                    child: Text("ABCDE"),
-                                  ),
-                                  SizedBox(
-                                    height: 15,
-                                  ),
-                                  //Row2.1.1.2
-                                  Container(
-                                    color: Colors.green,
-                                    child: Text("ABCDE"),
-                                  )
-                                ],
-                              ),
-                              //column2.1.2
-                              Container(
-                                color: Colors.green,
-                                child: Text("ABCDE"),
-                              )
-                            ],
-                          ),
-                          //Row2.2
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              //column2.2.1
-                              Container(
-                                color: Colors.green,
-                                child: Text("ABCDE"),
-                              ),
-                              //column2.2.2
-                              Container(
-                                color: Colors.green,
-                                child: Text("ABCDE"),
-                              )
-                            ],
-                          )
-                        ],
-                      ))
-                ],
-              ),
+            ImageWidget(
+              image: Image.network(
+                  'https://i.pinimg.com/736x/56/08/ec/5608ec7fe194b6ecf7bcb68421bcde9a.jpg'),
+              name: "My Dog",
+              description: "Selfie dog",
+              title: "Cute Dog",
             ),
             SizedBox(
               height: 15,
             ),
-            //By Row
-            Container(
-              padding: EdgeInsets.all(15),
-              height: 200,
-              color: Colors.blue,
-              child: Row(
-                children: [
-                  //Column1
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                      color: Colors.green,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  //Column2
-                  Expanded(
-                      flex: 2,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          //Row2.1
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              //column2.1.1
-                              Column(
-                                children: [
-                                  //Row2.1.1.1
-                                  Container(
-                                    color: Colors.green,
-                                    child: Text("ABCDE"),
-                                  ),
-                                  SizedBox(
-                                    height: 15,
-                                  ),
-                                  //Row2.1.1.2
-                                  Container(
-                                    color: Colors.green,
-                                    child: Text("ABCDE"),
-                                  )
-                                ],
-                              ),
-                              //column2.1.2
-                              Container(
-                                color: Colors.green,
-                                child: Text("ABCDE"),
-                              )
-                            ],
-                          ),
-                          //Row2.2
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              //column2.2.1
-                              Container(
-                                color: Colors.green,
-                                child: Text("ABCDE"),
-                              ),
-                              //column2.2.2
-                              Container(
-                                color: Colors.green,
-                                child: Text("ABCDE"),
-                              )
-                            ],
-                          )
-                        ],
-                      ))
-                ],
-              ),
-            ),
+            ImageWidget(
+              image: Image.network(
+                  'https://th.bing.com/th/id/OIP.nKmHIAv2k1TRO7Awpv1olgHaJQ?w=800&h=1000&rs=1&pid=ImgDetMain'),
+              name: "Honey Shampoo",
+              description: "Japan Product",
+              title: "Honey Set",
+            )
           ],
         ),
       ),
